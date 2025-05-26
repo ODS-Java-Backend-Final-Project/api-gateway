@@ -10,9 +10,9 @@ public class GatewayConfig {
     @Bean
     public RouteLocator routeLocator(RouteLocatorBuilder builder) {
         return builder.routes()
-                .route("board-game_service", r -> r.path("/board-games/**")
+                .route("board-game_service", r -> r.path("/api/board-games/**")
                         .uri("lb://board-game-service"))
-                .route("event_service", r -> r.path("/events/**")
+                .route("event_service", r -> r.path("/api/events/**")
                         .uri("lb://event-service"))
 
                         .build();
